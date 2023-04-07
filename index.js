@@ -1,5 +1,6 @@
 import axios from 'axios';
 import express from 'express';
+import path from 'path';
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 
 
+app.set(path.join('views',__dirname, 'views'))
 // set view engine menggunakan EJS
 app.set('view engine', 'ejs');
 
