@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 
 
-app.set("ciews", path.join(__dirname, 'views'))
+app.set("views", path.join(__dirname, 'views'))
 // set view engine menggunakan EJS
 app.set('view engine', 'ejs');
 
@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     axios.get('https://api.quran.gading.dev/surah').then(resp => {
         let surahAll = resp.data.data
-        res.render('views/index.ejs', { title: 'Alquran', item: surahAll});
+        res.render('index', { title: 'Alquran', item: surahAll});
     })
 });
 
