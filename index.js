@@ -1,6 +1,10 @@
 import axios from 'axios';
 import express from 'express';
 import path from 'path';
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -12,7 +16,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 
 
-app.set(path.join('views',__dirname, 'views'))
+app.set("ciews", path.join(__dirname, 'views'))
 // set view engine menggunakan EJS
 app.set('view engine', 'ejs');
 
