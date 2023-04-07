@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     axios.get('https://api.quran.gading.dev/surah').then(resp => {
         let surahAll = resp.data.data
-        res.render('views/index', { title: 'Alquran', item: surahAll});
+        res.render('views/index.ejs', { title: 'Alquran', item: surahAll});
     })
 });
 
